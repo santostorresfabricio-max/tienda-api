@@ -22,7 +22,14 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'career_id',
+        'terms_accepted',
     ];
+
+    public function career() 
+    {
+        return $this->belongsTo(Career::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
